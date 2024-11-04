@@ -79,5 +79,10 @@ function ShowSwordDetails()
     return false -- คืนค่า false เพื่อดำเนินการลูปต่อ
 end
 
--- เรียกใช้ฟังก์ชันเพื่อแสดงรายละเอียดของอาวุธประเภท Sword และตรวจสอบ Mastery
-ShowSwordDetails()
+-- วนลูปทุก ๆ 30 วินาทีเพื่อตรวจสอบ Mastery ของดาบใน inventory
+while true do
+    if ShowSwordDetails() then
+        break -- หยุดลูปหากฟังก์ชัน ShowSwordDetails() คืนค่า true
+    end
+    wait(30) -- รอ 30 วินาทีก่อนทำงานอีกครั้ง
+end
